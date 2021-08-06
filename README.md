@@ -19,4 +19,4 @@ http://spring-boot-demo-notes.us-east-2.elasticbeanstalk.com <br>
 login: spring-user <br>
 password: 55tronGP@55w0rd <br>
 
-<img src="https://github.com/mkonyshev22/notes/blob/main/notes.png" width="550">
+<img src="https://github.com/mkonyshev22/notes/blob/master/notes.png" width="550">
