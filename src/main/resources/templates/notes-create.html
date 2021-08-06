@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактор заметок</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div>
+    <form action="#" th:action="@{/notes-create}" th:object="${note}" method="post">
+        <input type="text" size="70" th:field="*{text}" id="text" placeholder="Новая заметка (80 символов максимум)">
+        <br>
+        <span class="validationError"
+              th:if="${#fields.hasErrors('text')}"
+              th:errors="*{text}">Text Error
+    </span>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Создать">
+    </form>
+    <br>
+    <a class="btn btn-primary" th:href="@{/notes-list}">Отмена</a>
+</div>
+</body>
+</html>

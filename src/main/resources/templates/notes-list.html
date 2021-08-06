@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Заметки</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<div>
+    <table>
+        <td><h1>Заметки</h1></td>
+        <td th:width="260"></td>
+        <td><a class="btn btn-secondary" th:href="@{/logout}">Выход</a></td>
+    </table>
+
+    <div class="ui-button">
+        Фильтр: <a th:href="@{/notes}">Все заметки</a> или <a th:href="@{/notes-important}">только 📕 избранные</a>
+    </div>
+
+    <div th:if="${!notes.isEmpty()}">
+        <table class="table table-hover table-striped w-auto">
+            <tr>
+                <th th:width="30">#</th>
+                <th th:width="30">📚</th>
+                <th>Заметка</th>
+                <th th:width="90">Действие</th>
+            </tr>
+            <tr th:each="note : ${notes}">
+                <td th:text="${note.getId()}">Empty</td>
+                <td th:if="${note.getImportant()}"><a
+                        th:href="@{/notes-toggle-important/{id}(id=${note.getId()})}">📕</a></td>
+                <td th:unless="${note.getImportant()}"><a th:href="@{/notes-toggle-important/{id}(id=${note.getId()})}">📗</a>
+                </td>
+                <td th:text="${note.getText()}">Empty</td>
+                <td>
+                    <a th:href="@{/notes-edit/{id}(id=${note.getId()})}">✏️</a> <a
+                        th:href="@{/notes-del/{id}(id=${note.getId()})}">🗑</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <a class="btn btn-primary" th:href="@{/notes-create}">Создать</a>
+</div>
+
+</body>
+</html>
