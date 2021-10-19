@@ -14,9 +14,9 @@
 - Hibernate
 - Spring Security
 
-### Проект доступен по ссылке <br>
+<!--### Проект доступен по ссылке <br>
 http://spring-boot-demo-notes.us-east-2.elasticbeanstalk.com <br>
 login: spring-user <br>
 password: 55tronGP@55w0rd <br>
-
+-->
 <img src="https://github.com/mkonyshev22/notes/blob/master/notes.png" width="500">
